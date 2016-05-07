@@ -1,5 +1,7 @@
 package com.ldw.test.springmvc;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.junit.Test;
@@ -40,6 +42,14 @@ public class TestMybatis{
 	public void testDelUser(){
 		userService.delUserInterface(3);
 		System.out.println(userService.queryUserInterface(3));
+	}
+	
+	@Test 
+	public void testQueryAllUsers(){
+		List<SysUser> ulist = userService.selectAllInterface();
+		for (SysUser sysUser : ulist) {
+			System.out.println(sysUser.toString());
+		}
 	}
 	
 	

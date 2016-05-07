@@ -25,9 +25,7 @@ public class SqlSessionHelper {
 	}
 	
 	private static class SqlSessionHelperInit{
-		static SqlSessionHelper sqlSh = new SqlSessionHelper();
-			
-		
+		final static SqlSessionHelper sqlSh = new SqlSessionHelper();	
 	}
 	
 }

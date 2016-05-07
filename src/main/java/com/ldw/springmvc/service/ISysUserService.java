@@ -1,5 +1,7 @@
 package com.ldw.springmvc.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import com.ldw.springmvc.entity.SysUser;
@@ -13,10 +15,10 @@ import com.ldw.springmvc.entity.SysUser;
 
 public interface ISysUserService {
 	/**
-	 * 1、基于模板的
+	 * 1、基于SqlSessionFactory的
 	 * @param user
 	 */
-	void saveUser(SysUser user);
+	int saveUser(SysUser user);
 	SysUser queryUser(int uId);
 	
 	void delUser(int uId);
@@ -25,7 +27,14 @@ public interface ISysUserService {
 	 * 2、基于接口的
 	 * @param user
 	 */
-	void saveUserIterface(SysUser user);
+	int saveUserIterface(SysUser user);
 	SysUser	queryUserInterface(int uId);
-	void delUserInterface(int uId);
+	int delUserInterface(int uId);
+	List<SysUser> selectAllInterface();
+	/**
+	 *3、基于jdbcTemplate 
+	 */
+//	void saveUserTmpl(SysUser user);
+//	void updateUserTmpl(SysUser user);
+//	List<SysUser> selectAllTmpl();
 }

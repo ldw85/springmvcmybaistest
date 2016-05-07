@@ -8,8 +8,8 @@ import com.ldw.springmvc.entity.SysUser;
 
 @Repository
 public interface ISysUserDao {
-	public void saveUser(SysUser user);
+	public int saveUser(SysUser user);
 	public SysUser selectById(int uId);
-	public void deleteById(int uId);
+	public int deleteById(int uId);
 	public List<SysUser> selectAll();
 }
